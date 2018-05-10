@@ -12,5 +12,6 @@ namespace TrackListLabs
             Name = name;
             Callback = callback;
         }
+
     }
 }

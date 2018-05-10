@@ -5,8 +5,8 @@ namespace TrackListLabs
 {
     public class Menu
     {
-        public bool AppIsRunning;
-        private List<Option> Options { get; set; }
+        public bool AppIsRunning { get; set; }
+        public List<Option> Options { get; private set; }
 
         public Menu()
         {
@@ -18,7 +18,6 @@ namespace TrackListLabs
         {
             return Add(new Option(option, callback));
         }
-
         public Menu Add(Option option)
         {
             Options.Add(option);

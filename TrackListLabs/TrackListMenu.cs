@@ -6,7 +6,7 @@ namespace TrackListLabs
     public class TrackListMenu
     {
         public Menu Menu { get; private set; }
-        public List<Track> TrackList;
+        public List<Track> TrackList { get; private set; }
         public String Separator { get; private set; }
 
         public TrackListMenu(List<Track> trackList, String separator)
@@ -33,50 +33,25 @@ namespace TrackListLabs
 
         private void Add()
         {
-            String author = Input.ReadString("Please, enter author's name");
-            author = author.Trim(' ');
-            if (author == "")
-            {
-                throw new InvalidInputException("There can not be author with such name.");
-            }
-
-            String trackName = Input.ReadString("Enter name of track");
-            trackName = trackName.Trim(' ');
-            if (trackName == "")
-            {
-                throw new InvalidInputException("There can't be track with such name");
-            }
+            string author = Input.GetParameter("Please, enter author's name",
+                                                      "There can not be author with such name");
+            
+            string trackName = Input.GetParameter("Enter name of the track",
+                                                         "Invalid name of track");
             TrackList.Add(new Track(author, trackName));
         }
 
         private void Delete()
         {
             Track suitableTrack = null;
-            String[] info;
 
-            try
-            {
-                info = Input.ReadString("You shold enter full author's" +
-                                        " name and track's name" +
-                                        " separated with " + Separator)
-                    .Split(Separator.ToCharArray());
-            }
-            catch (Exception)
-            {
-                throw new InvalidInputException("Threre can't be author with such name!");
-            }
 
-            String author = info[0];
-            String name = info[1];
+            String[] input =
+                Input.GetFewParametersFromLine("/", "Please, enter full author's name and track's name", 2);
 
-            if (author == "" || name == "")
-            {
-                throw new InvalidInputException("There can't be author with such name!");
-            }
-            
             foreach (Track track in TrackList)
             {
-                if (track.Author == author && track.Name == name)
+                if (track.Author == input[0] && track.Name == input[1])
                 {
                     suitableTrack = track;
                 }
@@ -94,15 +69,9 @@ namespace TrackListLabs
 
         private void Search()
         {
-            String information = Input.ReadString("Please enter part of Author's name," +
-                                                  " part of track name or both of them," +
-                                                  " separated with" + Separator);
-            information = information.Trim(' ');
-            if (information == "")
-            {
-                throw new InvalidInputException("Input can not be empty. Next time enter in appropriate form.");
-            }
 
+            String information = Input.GetParameter(("Please enter part of Author's name, part of track name or both of them, separated with" + Separator),
+                                                            "Input can not be empty. Next time enter in appropriate form.");
             foreach (Track track in TrackList.FindAll(track => track.Includes(information, Separator)))
             {
                 Output.WriteLine(track.Author + Separator + track.Name);
