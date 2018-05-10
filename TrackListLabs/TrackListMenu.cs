@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
 
 namespace TrackListLabs
 {
@@ -19,7 +23,9 @@ namespace TrackListLabs
                 .Add("search", Search)
                 .Add("quit", Quit)
                 .Add("list", List)
-                .Add("help", Help);
+                .Add("help", Help)
+                .Add("save-to-pls", SaveTrackListToPls)
+                .Add("load-from-pls", LoadTrackListFromPls);
 
         }
 
@@ -27,18 +33,22 @@ namespace TrackListLabs
         {
             foreach (Track track in TrackList)
             {
-                Output.WriteLine(track.Author + Separator + track.Name);
+                Output.WriteLine("Author/name = " + track.Author + Separator + track.Name);
+                Output.WriteLine("Filepath  = " + track.FilePath);
             }
         }
 
         private void Add()
         {
             string author = Input.GetParameter("Please, enter author's name",
-                                                      "There can not be author with such name");
+                "There can not be author with such name");
             
             string trackName = Input.GetParameter("Enter name of the track",
-                                                         "Invalid name of track");
-            TrackList.Add(new Track(author, trackName));
+                "Invalid name of track");
+
+            string trackFilename = Input.GetParameter("Enter fullFilename",
+                "Filepath can not be empty");
+            TrackList.Add(new Track(author, trackName, trackFilename));
         }
 
         private void Delete()
@@ -71,7 +81,7 @@ namespace TrackListLabs
         {
 
             String information = Input.GetParameter(("Please enter part of Author's name, part of track name or both of them, separated with" + Separator),
-                                                            "Input can not be empty. Next time enter in appropriate form.");
+                "Input can not be empty. Next time enter in appropriate form.");
             foreach (Track track in TrackList.FindAll(track => track.Includes(information, Separator)))
             {
                 Output.WriteLine(track.Author + Separator + track.Name);
@@ -86,6 +96,21 @@ namespace TrackListLabs
         private void Help()
         {
             Menu.Display();
+        }
+
+        private void SaveTrackListToPls()
+        {
+            String filePath = Input.GetParameter("Please enter full path to pls file",
+                "Filepath can't be empty");
+            
+            TrackListSerializer.saveToPls(filePath, TrackList);
+        }
+
+        private void LoadTrackListFromPls()
+        {
+            String filePath = Input.GetParameter("Please enter full path to file",
+                "Filepath can't be empty");
+            TrackListSerializer.loadFromPls(filePath, TrackList);
         }
     }
 }

@@ -42,7 +42,8 @@ namespace TrackListLabs
                 if (option.Name.Equals(command.ToLower()))
                 {
                     option.Callback();
-                    Output.WriteLine("command" + option.Name + " executed");
+                    Output.WriteLine("command " + option.Name + " executed");
+                    Output.WriteLine("======================");
                     return;
                 }
             }

@@ -6,11 +6,13 @@ namespace TrackListLabs
     {
         public String Author { get; private set; }
         public String Name { get; private set; }
-
-        public Track(String author, String name)
+        public String FilePath { get; private set; }
+        
+        public Track(String author, String name, String filePath)
         {
             Author = author;
             Name = name;
+            FilePath = filePath;
         }
 
         public bool Includes(String information, String separator)
