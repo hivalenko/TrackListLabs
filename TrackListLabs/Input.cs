@@ -13,6 +13,17 @@ namespace TrackListLabs
             return Console.ReadLine();
         }
 
+        public static string GetParameter(string message, string invalidCaseMessage, string symbolsToExclude)
+        {
+            String[] input = GetParameter(message, invalidCaseMessage).Split(symbolsToExclude);
+            if (input.Length > 1)
+            {
+                throw new InvalidInputException(invalidCaseMessage);
+            }
+
+            return input[0];
+        }
+
         public static string GetParameter(string message, string invalidCaseMessage)
         {
             string parameter = ReadString(message);
@@ -35,6 +46,10 @@ namespace TrackListLabs
                 info = GetParameter(message + ",separated with " + separator,
                                     "This input can not be empty")
                     .Split(separator.ToCharArray());
+                if (info.Length < 2)
+                {
+                    throw new InvalidInputException();
+                }
             }
             catch (Exception)
             {

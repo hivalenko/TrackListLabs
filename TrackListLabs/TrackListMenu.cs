@@ -40,8 +40,9 @@ namespace TrackListLabs
 
         private void Add()
         {
-            string author = Input.GetParameter("Please, enter author's name",
-                "There can not be author with such name");
+            string author = Input.GetParameter("Please, enter author's name. Author's name should not contain '-' symbol",
+                "There can not be author with such name","-");
+            
             
             string trackName = Input.GetParameter("Enter name of the track",
                 "Invalid name of track");
@@ -110,6 +111,7 @@ namespace TrackListLabs
         {
             String filePath = Input.GetParameter("Please enter full path to file",
                 "Filepath can't be empty");
+            
             TrackListSerializer.loadFromPls(filePath, TrackList);
         }
     }

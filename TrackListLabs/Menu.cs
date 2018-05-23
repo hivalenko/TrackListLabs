@@ -35,15 +35,15 @@ namespace TrackListLabs
 
         public void ChooseCommandFromOptions()
         {
+            Output.WriteLine("======================");
             string command = Input.GetCommand();
-
+            
             foreach (Option option in Options)
             {
                 if (option.Name.Equals(command.ToLower()))
                 {
                     option.Callback();
                     Output.WriteLine("command " + option.Name + " executed");
-                    Output.WriteLine("======================");
                     return;
                 }
             }
