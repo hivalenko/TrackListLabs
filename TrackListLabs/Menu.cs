@@ -18,6 +18,7 @@ namespace TrackListLabs
         {
             return Add(new Option(option, callback));
         }
+
         public Menu Add(Option option)
         {
             Options.Add(option);
@@ -37,7 +38,7 @@ namespace TrackListLabs
         {
             Output.WriteLine("======================");
             string command = Input.GetCommand();
-            
+
             foreach (Option option in Options)
             {
                 if (option.Name.Equals(command.ToLower()))
@@ -47,6 +48,7 @@ namespace TrackListLabs
                     return;
                 }
             }
+
             throw new InvalidInputException("Unknown command");
         }
     }

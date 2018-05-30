@@ -44,8 +44,8 @@ namespace TrackListLabs
                 "There can not be author with such name","-");
             
             
-            string trackName = Input.GetParameter("Enter name of the track",
-                "Invalid name of track");
+            string trackName = Input.GetParameter("Enter name of the track. Name of track should not contain '-' symbol",
+                "Invalid name of track","-");
 
             string trackFilename = Input.GetParameter("Enter fullFilename",
                 "Filepath can not be empty");
