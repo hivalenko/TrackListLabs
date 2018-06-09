@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.0": {
+      "TrackListClient/1.0.0": {
+        "dependencies": {
+          "TrackListLabs": "1.0.0",
+          "TrackListServer": "1.0.0"
+        },
+        "runtime": {
+          "TrackListClient.dll": {}
+        }
+      },
+      "TrackListLabs/1.0.0": {
+        "runtime": {
+          "TrackListLabs.dll": {}
+        }
+      },
+      "TrackListServer/1.0.0": {
+        "dependencies": {
+          "TrackListLabs": "1.0.0"
+        },
+        "runtime": {
+          "TrackListServer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TrackListClient/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TrackListLabs/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TrackListServer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

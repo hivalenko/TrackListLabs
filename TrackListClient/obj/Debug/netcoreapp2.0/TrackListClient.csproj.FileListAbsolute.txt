@@ -1,0 +1,16 @@
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/obj/Debug/netcoreapp2.0/TrackListClient.csprojAssemblyReference.cache
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/obj/Debug/netcoreapp2.0/TrackListClient.csproj.CoreCompileInputs.cache
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/obj/Debug/netcoreapp2.0/TrackListClient.AssemblyInfoInputs.cache
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/obj/Debug/netcoreapp2.0/TrackListClient.AssemblyInfo.cs
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/bin/Debug/netcoreapp2.0/TrackListClient.deps.json
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/bin/Debug/netcoreapp2.0/TrackListClient.runtimeconfig.json
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/bin/Debug/netcoreapp2.0/TrackListClient.runtimeconfig.dev.json
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/bin/Debug/netcoreapp2.0/TrackListClient.dll
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/bin/Debug/netcoreapp2.0/TrackListClient.pdb
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/bin/Debug/netcoreapp2.0/TrackListLabs.dll
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/bin/Debug/netcoreapp2.0/TrackListServer.dll
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/bin/Debug/netcoreapp2.0/TrackListLabs.pdb
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/bin/Debug/netcoreapp2.0/TrackListServer.pdb
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/obj/Debug/netcoreapp2.0/TrackListClient.csproj.CopyComplete
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/obj/Debug/netcoreapp2.0/TrackListClient.dll
+/home/ekov/RiderProjects/TrackListLabs/TrackListClient/obj/Debug/netcoreapp2.0/TrackListClient.pdb
